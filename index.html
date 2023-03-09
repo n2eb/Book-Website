@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Book Website</title>
+    <!-- Bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Css style link -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand text-white fs-3" href="#">موقع كُتُبْ</a>
+        </div>
+
+    </nav>
+
+    <!-- Header section -->
+    <header class="mt-5">
+        <div class="container">
+            <h2>ضع كتاباً تريد قرائتة في النموذج أدناه</h2>
+            <span id="span-success">تمت تعبئة الحقول بنجاح</span>
+            <form id="form">
+                <div class="mb-2">
+                    <label for="bookInput" class="form-label">ضع الكتاب الذي تريده</label>
+                    <input type="text" id="bookNameInput" class="form-control">
+                    <span  id="span-error"></span>
+                </div>
+                <div class="mb-2">
+                    <label for="authorInput" class="form-label">إسم المؤلف</label>
+                    <input type="text" class="form-control" id="authorInput">
+                    <span  id="span-error2"></span>
+                </div>
+                <div class="mb-2">
+                    <label for="numberOfPages" class="form-label">عدد الصفحات</label>
+                    <input type="number" class="form-control" id="numberOfPages">
+                    <span  id="span-error3"></span>
+                </div>
+                <button class="btn btn-primary" id="btn">إرسال</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- Book After Added section -->
+    <section class="pt-5">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>الكتاب</th>
+                        <th>المؤلف</th>
+                        <th>عدد الصفحات</th>
+                    </tr>
+                </thead>
+
+                <tbody id="trbody">
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script src="test.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

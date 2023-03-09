@@ -1,19 +1,3 @@
-// let openRequest = indexedDB.open('book', 1);
-
-// openRequest.onupgradeneeded = () => {
-//     let db = openRequest.result;
-//     console.log('Upgrade needed');
-// }
-
-// openRequest.onsuccess = () => {
-//     console.log('success');
-//     let db = openRequest.result;
-// }
-
-// openRequest.onerror = () => {
-//     console.log('Error '+ openRequest.error);
-// }
-
 const btn = document.getElementById('btn');
 
 btn.addEventListener('click', (e) => {
@@ -30,26 +14,37 @@ btn.addEventListener('click', (e) => {
 
 
     if(bookInputValue == ''){
-        alert('أدخل إسم الكتاب !');
+        bookError.innerHTML = "أدخل إسم الكتاب";
         return false;
+    }else{
+        bookError.innerHTML = "";
     }
     
     if(authorInputValue == ''){
-        alert('أدخل إسم المؤلف!');
+        authorError.innerHTML = "أدخل إسم المؤلف في!";
         return false;
+    }else{
+        authorError.innerHTML = "";
     }
-    
+
     if(numberOfPagesValue == ''){
-        alert('أدخل عدد صفحات الكتاب!');
-        return false;
-    }
-        let saveBody = document.getElementById('trbody').innerHTML = `<tr>`+
+        numberOfPageError.innerHTML = "أدخل عدد صفحات الكتاب في الحقل!";
+        return false
+    }else {
+        numberOfPageError.innerHTML = "";
+
+        if(confirm("هل أنت متأكد؟")){
+            let saveBody = document.getElementById('trbody').innerHTML = `<tr>`+
                                                   `<td>${bookInputValue}</td>`+
                                                   `<td>${authorInputValue}</td>`+
                                                   `<td>${numberOfPagesValue}</td>`+
                                                   `</tr>`;
         localStorage['saveBody'] = saveBody;
-        return true;
+            window.location.reload();
+        }else{
+            return false;
+        }
+    }
 });
 
 document.getElementById('trbody').innerHTML = localStorage.saveBody;

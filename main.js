@@ -21,7 +21,7 @@ btn.addEventListener('click', (e) => {
     }
     
     if(authorInputValue == ''){
-        authorError.innerHTML = "أدخل إسم المؤلف في!";
+        authorError.innerHTML = "أدخل إسم المؤلف !";
         return false;
     }else{
         authorError.innerHTML = "";

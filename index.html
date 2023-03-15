@@ -22,45 +22,36 @@
     <header class="mt-5">
         <div class="container">
             <h2>ضع كتاباً تريد قرائتة في النموذج أدناه</h2>
-            <span id="span-success">تمت تعبئة الحقول بنجاح</span>
-            <form id="form">
-                <div class="mb-2">
-                    <label for="bookInput" class="form-label">ضع الكتاب الذي تريده</label>
-                    <input type="text" id="bookNameInput" class="form-control">
-                    <span  id="span-error"></span>
+            <form id="book-form">
+                <div class="form-group">
+                    <label for="bookName" class="form-label">ضع الكتاب الذي تريده</label>
+                    <input type="text" id="bookName" class="form-control">
                 </div>
                 <div class="mb-2">
-                    <label for="authorInput" class="form-label">إسم المؤلف</label>
-                    <input type="text" class="form-control" id="authorInput">
-                    <span  id="span-error2"></span>
+                    <label for="author" class="form-label">إسم المؤلف</label>
+                    <input type="text" class="form-control" id="author">
                 </div>
                 <div class="mb-2">
-                    <label for="numberOfPages" class="form-label">عدد الصفحات</label>
-                    <input type="number" class="form-control" id="numberOfPages">
-                    <span  id="span-error3"></span>
+                    <label for="isbn" class="form-label">عدد الصفحات</label>
+                    <input type="number" class="form-control" id="isbn">
                 </div>
-                <button class="btn btn-primary" id="btn">إرسال</button>
+                <input type="submit" value="أضف الكتاب" class="btn btn-primary btn-block">
             </form>
-        </div>
-    </header>
-
-    <!-- Book After Added section -->
-    <section class="pt-5">
-        <div class="container">
-            <table class="table">
+            <table class="table table-striped mt-5">
                 <thead>
                     <tr>
-                        <th>الكتاب</th>
-                        <th>المؤلف</th>
-                        <th>عدد الصفحات</th>
+                        <th>إسم الكتاب</th>
+                        <th>إسم المؤلف</th>
+                        <th>رقم الصفحات</th>
+                        <th></th>
                     </tr>
                 </thead>
+                <tbody id="book-list">
 
-                <tbody id="trbody">
                 </tbody>
             </table>
         </div>
-    </section>
+    </header>
     <script src="test.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="main.js"></script>
